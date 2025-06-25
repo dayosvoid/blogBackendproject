@@ -17,6 +17,9 @@ app.use("/api/v1", router)
 // })
 
 app.use("/api/v1/blog", auth, blogRouter)
+app.get("/",(req,res)=>{
+    res.status(200).json({sucess:true, message: "server is live"})
+})
 app.use(notfound)
 const start = async()=>{
     try {
